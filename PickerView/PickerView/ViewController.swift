@@ -59,8 +59,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        lblImageFileName.text = imageFileName[row]
-        imageView.image = imageArray[row]
+        if (component == 0) {
+            lblImageFileName.text = imageFileName[row]
+        } else {
+            imageView.image = imageArray[row]
+        }
     }
 }
 
